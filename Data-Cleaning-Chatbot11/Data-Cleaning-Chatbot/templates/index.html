@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleansera – AI-Powered Data Assistant</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="gradient-orb orb1"></div>
+        <div class="gradient-orb orb2"></div>
+        <div class="gradient-orb orb3"></div>
+    </div>
+
+    <div class="container">
+        <div class="sidebar-left">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="{{ url_for('static', filename='img/images.png') }}" alt="Cleansera Logo">
+                </div>
+                <div class="logo-text">Cleansera</div>
+            </div>
+
+            <div class="section-header">Controls</div>
+            <button class="control-btn" id="undoBtn">
+                <span>↩</span> Undo Action
+            </button>
+            <button class="control-btn" id="downloadBtn">
+                <span>⬇</span> Download CSV
+            </button>
+
+            <div class="section-header">Data Columns</div>
+            <div id="columnsList">
+                <div class="info-banner">
+                    Upload data to view columns
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="header-bar">
+                <h1 style="font-size: 32px; font-weight: 800; margin-bottom: 8px;">
+                    AI-Powered Data Assistant
+                </h1>
+                <p style="color: rgba(255,255,255,0.6); font-size: 14px;">
+                    <span class="status-indicator" id="backendStatus"></span>
+                    <span id="statusText">Checking backend...</span>
+                </p>
+                
+                <label class="upload-zone" for="fileInput">
+                    <input type="file" id="fileInput" accept=".csv,.xlsx,.xls">
+                    <div class="upload-icon">📊</div>
+                    <div class="upload-text">
+                        <strong>Drop your CSV/Excel file here</strong> or click to browse
+                    </div>
+                </label>
+            </div>
+
+            <div class="data-view">
+                <div id="dataPreview" class="data-table-wrapper">
+                    <div class="info-banner">
+                        <strong>👋 Welcome to Cleansera!</strong><br><br>
+                        Upload a CSV or Excel file to start cleaning and analyzing your data with AI assistance.
+                    </div>
+                </div>
+                <div id="chartContainer" class="chart-container"></div>
+            </div>
+        </div>
+
+        <div class="chat-panel">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <img 
+                      src="https://img.icons8.com/liquid-glass/48/gemini-ai.png" 
+                      alt="AI Assistant Icon"
+                      width="28" 
+                      height="28" 
+                      style="vertical-align: middle; margin-right: 8px; filter: brightness(0) invert(1) hue-rotate(180deg);">
+                      Cleansera – AI Assistant
+                </div>
+                <div class="chat-subtitle">Powered AI</div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="assistant-message">
+                    Hi! I'm your AI data assistant. Upload a file and I'll help you:
+  
+                </div>
+            </div>
+
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        class="chat-input" 
+                        id="chatInput" 
+                        placeholder="Ask me anything about your data..."
+                    >
+                    <button class="send-btn" id="sendBtn" >➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

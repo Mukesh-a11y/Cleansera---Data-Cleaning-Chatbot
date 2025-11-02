@@ -1,0 +1,26 @@
+jin rows mei null value hei unhe show kro
+
+Jahan bhi data missing hai, woh rows hata do.
+
+Age column mein jahan data nahi hai, wahan 0 daal do.
+
+Customer ID wala column delete kar do.
+
+'Product Category' ka naam badal kar 'Item Type' kar do.
+
+Sirf un logon ka data dikhao jinki age 40 se kam hai.
+
+Har Product Category ka total sale kitna hai, iska bar chart banao.
+
+Age aur Total Amount ke beech kya relation hai, iska scatter plot dikhao.
+
+Sabki Age ka distribution dikhane ke liye ek histogram banao.
+
+Gender ke hisab se customers ka pie chart banao.
+
+Sabse mehenga product kaunsa hai?
+
+Show rows with null values.
+
+Sheher ke hisab se sales batao.
+ 

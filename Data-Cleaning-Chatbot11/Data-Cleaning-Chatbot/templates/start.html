@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleansera</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0a0d1f;
+            background: radial-gradient(ellipse at center, #1a2347 0%, #0a0d1f 70%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-effect {
+            position: absolute;
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, rgba(107, 126, 255, 0.15) 0%, transparent 60%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+            padding: 60px 40px;
+            max-width: 1200px;
+        }
+
+        .logo-container {
+            margin-bottom: 48px;
+        }
+
+        .logo {
+            width: 136px;
+            height: 136px;
+            background: linear-gradient(135deg, #8b95ff 0%, #7985f5 100%);
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(123, 133, 255, 0.35);
+            margin: 0 auto;
+        }
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 28px solid transparent;
+            border-right: 28px solid transparent;
+            border-bottom: 48px solid white;
+            position: relative;
+        }
+
+        .triangle::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 22px solid transparent;
+            border-right: 22px solid transparent;
+            border-bottom: 38px solid #8089f7;
+            top: 6px;
+            left: -22px;
+        }
+
+        h1 {
+            font-size: 88px;
+            font-weight: 600;
+            color: #8b95e8;
+            margin-bottom: 32px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #9ca8c8;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+
+        .description {
+            font-size: 24px;
+            color: #9ca8c8;
+            line-height: 1.6;
+            margin-bottom: 56px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 56px;
+            background: linear-gradient(135deg, #8b95ff 0%, #7985f5 100%);
+            color: white;
+            font-size: 22px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(123, 133, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(123, 133, 255, 0.5);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="glow-effect"></div>
+
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo">
+                <div class="triangle"></div>
+            </div>
+        </div>
+
+        <h1>Cleansera</h1>
+        
+        <p class="subtitle">Transform your data with AI-powered intelligence.</p>
+        <p class="description">Clean, analyze, and visualize your datasets effortlessly.</p>
+        
+        <a href="{{ url_for('index') }}" class="cta-button">Get Started</a>
+
+    </div>
+</body>
+</html>
